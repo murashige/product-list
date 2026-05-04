@@ -1,16 +1,52 @@
 @import 'tailwindcss';
 
 @theme {
+  /* Breakpoints
+     - PC ファースト: デフォルトのスタイル = PC/タブレット (≥768px)
+     - スマホは max-sp: プレフィックスで上書き
+     - sm/md/lg/xl/2xl は使わないルール（誤用防止のため initial で無効化）
+  */
+  --breakpoint-sp: 768px;
+  --breakpoint-sm: initial;
+  --breakpoint-md: initial;
+  --breakpoint-lg: initial;
+  --breakpoint-xl: initial;
+  --breakpoint-2xl: initial;
+
+  /* Color tokens (semantic) */
   --color-background: #fafafa;
   --color-foreground: #1a1a1a;
+  --color-foreground-soft: #1a1a1acc; /* foreground を 80% 透過: 説明文など、本文より少し弱める */
   --color-muted: #6b7280;
   --color-border: #e5e5e5;
   --color-card: #ffffff;
-  --color-brand: #1a1a1a;
-  --color-brand-foreground: #ffffff;
 
+  /* Primary: 濃い青（CTA・強調） */
+  --color-primary: #1d4ed8;
+  --color-primary-foreground: #ffffff;
+
+  /* Link: primary より薄い青（クリック可能なテキスト） */
+  --color-link: #3b82f6;
+  --color-link-hover: #2563eb;
+
+  /* Font tokens */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Font size tokens (semantic, role-based)
+     - text-caption: 補助・ラベル・サブヘディング全般 (12px)
+     - text-body: 本文 (16px)
+     - text-button: ボタンの文字 (16px)
+     - text-logo: ヘッダーロゴ (20px)
+     - text-heading: 標準の見出し (24px)
+     - text-heading-lg: 大きめ見出し（PC の h1 等）(30px)
+  */
+  --text-caption: 0.75rem;
+  --text-body: 1rem;
+  --text-button: 1rem;
+  --text-logo: 1.25rem;
+  --text-heading: 1.5rem;
+  --text-heading-lg: 1.875rem;
 }
 
 body {

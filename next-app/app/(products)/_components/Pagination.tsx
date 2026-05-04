@@ -30,8 +30,10 @@ export function Pagination({ currentPage, totalPages }: Props) {
             href={pageHref(page)}
             aria-current={isCurrent ? 'page' : undefined}
             className={[
-              'inline-flex h-9 min-w-9 items-center justify-center rounded-md px-3 text-sm transition-colors',
-              isCurrent ? 'bg-brand text-brand-foreground' : 'text-foreground hover:bg-border',
+              'text-body inline-flex h-9 min-w-9 items-center justify-center rounded-md px-3 transition-colors',
+              isCurrent
+                ? 'bg-primary text-primary-foreground'
+                : 'text-link hover:text-link-hover hover:bg-border',
             ].join(' ')}
           >
             {page}
@@ -62,7 +64,7 @@ function PaginationLink({
       <span
         aria-disabled="true"
         aria-label={ariaLabel}
-        className="text-muted/50 inline-flex h-9 w-9 cursor-not-allowed items-center justify-center rounded-md text-sm"
+        className="text-muted/50 text-body inline-flex h-9 w-9 cursor-not-allowed items-center justify-center rounded-md"
       >
         {children}
       </span>
@@ -72,7 +74,7 @@ function PaginationLink({
     <Link
       href={href}
       aria-label={ariaLabel}
-      className="text-foreground hover:bg-border inline-flex h-9 w-9 items-center justify-center rounded-md text-sm transition-colors"
+      className="text-link hover:text-link-hover hover:bg-border text-body inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors"
     >
       {children}
     </Link>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { fetchProduct } from '@/lib/api';
-import { BackToListLink } from './_components/BackToListLink';
+import { Breadcrumbs } from './_components/Breadcrumbs';
 import { ProductDetail } from './_components/ProductDetail';
 
 type Params = Promise<{ id: string }>;
@@ -24,7 +24,7 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
 
   return (
     <div className="space-y-8">
-      <BackToListLink />
+      <Breadcrumbs items={[{ label: 'ホーム', href: '/' }, { label: product.name }]} />
       <ProductDetail product={product} />
     </div>
   );

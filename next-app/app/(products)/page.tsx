@@ -14,10 +14,9 @@ export default async function ProductsPage({
 
   return (
     <section>
-      <header className="mb-10">
-        <p className="text-muted text-xs tracking-[0.3em]">COLLECTION</p>
-        <h1 className="mt-2 text-2xl font-semibold md:text-3xl">All Tees</h1>
-        <p className="text-muted mt-3 text-sm">シンプルで上質なベーシックから、限定コラボまで。</p>
+      <header className="mb-8">
+        <p className="text-muted text-caption tracking-[0.3em]">COLLECTION</p>
+        <h1 className="text-heading-lg max-sp:text-heading mt-2 font-semibold">Tシャツ一覧</h1>
       </header>
 
       <ProductGrid products={data.items} />

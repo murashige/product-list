@@ -10,12 +10,14 @@ export function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          sizes="(max-width: 768px) 100vw, 240px"
           className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
         />
       </div>
-      <div className="mt-3 space-y-1">
-        <h3 className="text-foreground line-clamp-2 text-sm font-medium">{product.name}</h3>
+      <div className="mt-2">
+        <h3 className="text-link group-hover:text-link-hover text-body line-clamp-2 font-medium underline-offset-2 group-hover:underline">
+          {product.name}
+        </h3>
       </div>
     </Link>
   );
