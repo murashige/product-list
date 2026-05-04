@@ -1,8 +1,9 @@
 import productsJson from '@/data/products.json';
 import { paginate, parsePageParam } from '@/libs/pagination';
-import type { Product } from '@/types';
+import { toProduct } from '@/libs/products';
+import type { RawProduct } from '@/types';
 
-const products = productsJson as Product[];
+const products = (productsJson as RawProduct[]).map(toProduct);
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

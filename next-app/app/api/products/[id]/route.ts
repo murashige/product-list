@@ -1,7 +1,8 @@
 import productsJson from '@/data/products.json';
-import type { Product } from '@/types';
+import { toProduct } from '@/libs/products';
+import type { RawProduct } from '@/types';
 
-const products = productsJson as Product[];
+const products = (productsJson as RawProduct[]).map(toProduct);
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
