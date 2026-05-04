@@ -23,13 +23,13 @@
 ### 必要環境
 
 - Node.js v22 以上
-- pnpm v10 以上（インストール手順は下記）
+- pnpm v10 以上
 
 ### 手順
 
 ```bash
-# 1. pnpm をインストール（未インストールの場合のみ）
-npm install -g pnpm@10.18.3
+# 1. pnpm 未インストールの場合のみ
+npm install -g pnpm
 
 # 2. next-app ディレクトリへ移動して依存をインストール
 cd next-app
@@ -42,26 +42,12 @@ cp .env.sample .env.local
 pnpm dev
 ```
 
-> pnpm のバージョンは `package.json` の `packageManager` フィールドで `pnpm@10.18.3` に固定しています。
-> Corepack を有効にしている環境（`corepack enable` 実行済み）では自動的に該当バージョンが使われるため、手動の `npm install -g pnpm` は不要です。
-
 ブラウザで http://localhost:3000 を開くと商品一覧が表示されます。
-
-ルート (`product-list/`) からは以下のショートカットも使えます:
-
-```bash
-pnpm dev      # next-app の dev を起動
-pnpm build    # next-app をビルド
-pnpm lint     # next-app の lint
-```
 
 ## ディレクトリ構成
 
 ```
 product-list/
-├── .claude/           # Claude Code 設定
-├── llm-docs/          # LLM 用ドキュメント
-├── CLAUDE.md          # Claude Code プロジェクト指示
 └── next-app/          # Next.js アプリ本体
     ├── app/           # ルーティング（App Router）
     ├── components/    # 全画面共通コンポーネント

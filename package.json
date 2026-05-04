@@ -10,7 +10,7 @@
     "format": "pnpm --dir next-app format"
   },
   "engines": {
-    "node": ">=22.0.0"
-  },
-  "packageManager": "pnpm@10.18.3"
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  }
 }
