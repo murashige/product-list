@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { fetchProduct } from '@/lib/api';
+import { fetchProduct } from '@/libs/api';
 
 import { Breadcrumbs } from './_components/Breadcrumbs';
 import { ProductDetail } from './_components/ProductDetail';

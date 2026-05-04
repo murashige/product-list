@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Button } from '@/components/Button';
-import type { Product } from '@/lib/types';
+import type { Product } from '@/types';
 
 export function ProductDetail({ product }: { product: Product }) {
   return (

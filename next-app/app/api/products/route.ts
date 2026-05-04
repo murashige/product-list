@@ -1,6 +1,6 @@
 import productsJson from '@/data/products.json';
-import { paginate, parsePageParam } from '@/lib/pagination';
-import type { Product } from '@/lib/types';
+import { paginate, parsePageParam } from '@/libs/pagination';
+import type { Product } from '@/types';
 
 const products = productsJson as Product[];
 

@@ -1,5 +1,5 @@
-import { fetchProducts } from '@/lib/api';
-import { parsePageParam } from '@/lib/pagination';
+import { fetchProducts } from '@/libs/api';
+import { parsePageParam } from '@/libs/pagination';
 
 import { Pagination } from './_components/Pagination';
 import { ProductGrid } from './_components/ProductGrid';

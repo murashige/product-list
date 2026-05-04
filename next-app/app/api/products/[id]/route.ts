@@ -1,5 +1,5 @@
 import productsJson from '@/data/products.json';
-import type { Product } from '@/lib/types';
+import type { Product } from '@/types';
 
 const products = productsJson as Product[];
 

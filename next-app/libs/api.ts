@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 
+import type { Product, ProductListResponse } from '@/types';
+
 import { env } from './env';
-import type { Product, ProductListResponse } from './types';
 
 export async function fetchProducts(page: number): Promise<ProductListResponse> {
   const res = await fetch(`${env.baseUrl}/api/products?page=${page}`, {
