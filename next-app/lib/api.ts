@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+
 import { env } from './env';
 import type { Product, ProductListResponse } from './types';
 

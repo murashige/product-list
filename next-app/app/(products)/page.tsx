@@ -1,5 +1,6 @@
 import { fetchProducts } from '@/lib/api';
 import { parsePageParam } from '@/lib/pagination';
+
 import { Pagination } from './_components/Pagination';
 import { ProductGrid } from './_components/ProductGrid';
 
