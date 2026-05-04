@@ -7,6 +7,7 @@
     "build": "pnpm --dir next-app build",
     "start": "pnpm --dir next-app start",
     "lint": "pnpm --dir next-app lint",
+    "typecheck": "pnpm --dir next-app typecheck",
     "format": "pnpm --dir next-app format"
   },
   "engines": {
