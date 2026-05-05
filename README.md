@@ -1,13 +1,13 @@
-# TEE STORE - 商品一覧アプリ
+# TEE STORE - Tシャツ販売ECサイト
 
-面接課題として作成した、Tシャツ販売サイトのデモアプリケーションです。商品一覧と詳細を閲覧できる Web アプリで、Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 で実装しています。
+Tシャツ販売ECサイトのデモアプリケーションです。
 
 ## 主な機能
 
 - 商品一覧画面（`/`）: カード形式で画像と商品名を表示。ページネーション付き
 - 商品詳細画面（`/products/[id]`）: 画像、商品名、説明文を表示
 - API Route によるモック API（`/api/products`, `/api/products/[id]`）
-- 50 件の Tシャツ商品データ（ID は UUID 形式）
+- 50 件の Tシャツ商品データ（ID は UUID 形式）、商品写真はGPT Image2で生成
 
 ## 技術スタック
 
