@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { fetchProduct } from '@/libs/api';
 
-import { Breadcrumbs } from './_components/Breadcrumbs';
 import { ProductDetail } from './_components/ProductDetail';
 
 type Params = Promise<{ id: string }>;
