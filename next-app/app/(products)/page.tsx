@@ -1,8 +1,11 @@
+import { Pagination } from '@/components/Pagination';
 import { fetchProducts } from '@/libs/api';
 import { parsePageParam } from '@/libs/pagination';
 
-import { Pagination } from './_components/Pagination';
 import { ProductGrid } from './_components/ProductGrid';
+
+/** 一覧画面の 1 ページあたり表示件数 */
+const PER_PAGE = 12;
 
 export default async function ProductsPage({
   searchParams,
@@ -11,7 +14,7 @@ export default async function ProductsPage({
 }) {
   const { page: pageParam } = await searchParams;
   const page = parsePageParam(pageParam);
-  const data = await fetchProducts(page);
+  const data = await fetchProducts(page, PER_PAGE);
 
   return (
     <section>
@@ -22,7 +25,7 @@ export default async function ProductsPage({
 
       <ProductGrid products={data.items} />
 
-      <Pagination currentPage={data.page} totalPages={data.totalPages} />
+      <Pagination currentPage={data.page} totalPages={data.totalPages} basePath="/" />
     </section>
   );
 }

@@ -4,8 +4,11 @@ import type { Product, ProductListResponse } from '@/types';
 
 import { env } from './env';
 
-export async function fetchProducts(page: number): Promise<ProductListResponse> {
-  const res = await fetch(`${env.baseUrl}/api/products?page=${page}`, {
+export async function fetchProducts(page: number, perPage?: number): Promise<ProductListResponse> {
+  const params = new URLSearchParams({ page: String(page) });
+  if (perPage !== undefined) params.set('perPage', String(perPage));
+
+  const res = await fetch(`${env.baseUrl}/api/products?${params.toString()}`, {
     cache: 'no-store',
   });
   if (!res.ok) {

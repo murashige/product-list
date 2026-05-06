@@ -1,15 +1,19 @@
 import Link from 'next/link';
 
 type Props = {
+  /** 表示中のページ番号（1 始まり） */
   currentPage: number;
+  /** 総ページ数 */
   totalPages: number;
+  /** 遷移先のベースパス（例: '/', '/products'）。1 ページ目はクエリなし、それ以外は ?page=N を付与 */
+  basePath: string;
 };
 
-function pageHref(page: number) {
-  return page <= 1 ? '/' : `/?page=${page}`;
+function pageHref(basePath: string, page: number) {
+  return page <= 1 ? basePath : `${basePath}?page=${page}`;
 }
 
-export function Pagination({ currentPage, totalPages }: Props) {
+export function Pagination({ currentPage, totalPages, basePath }: Props) {
   if (totalPages <= 1) return null;
 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
@@ -18,7 +22,11 @@ export function Pagination({ currentPage, totalPages }: Props) {
 
   return (
     <nav aria-label="ページネーション" className="mt-14 flex items-center justify-center gap-2">
-      <PaginationLink href={pageHref(currentPage - 1)} disabled={!hasPrev} ariaLabel="前のページ">
+      <PaginationLink
+        href={pageHref(basePath, currentPage - 1)}
+        disabled={!hasPrev}
+        ariaLabel="前のページ"
+      >
         ←
       </PaginationLink>
 
@@ -27,7 +35,7 @@ export function Pagination({ currentPage, totalPages }: Props) {
         return (
           <Link
             key={page}
-            href={pageHref(page)}
+            href={pageHref(basePath, page)}
             aria-current={isCurrent ? 'page' : undefined}
             className={[
               'text-body inline-flex h-9 min-w-9 items-center justify-center rounded-md px-3 transition-colors',
@@ -41,7 +49,11 @@ export function Pagination({ currentPage, totalPages }: Props) {
         );
       })}
 
-      <PaginationLink href={pageHref(currentPage + 1)} disabled={!hasNext} ariaLabel="次のページ">
+      <PaginationLink
+        href={pageHref(basePath, currentPage + 1)}
+        disabled={!hasNext}
+        ariaLabel="次のページ"
+      >
         →
       </PaginationLink>
     </nav>
